@@ -10,89 +10,105 @@
 		<link rel="stylesheet" href="reveal.js/css/theme/black.css">
 		<link rel="stylesheet" href="reveal.js/lib/css/monokai.css">
 
+		<!-- MathJaX -->
+		<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+	  	</script>
 		<!-- Materialize -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		<script type="text/javascript" src="./learning.js"></script> 
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-
-
-
-			fb = new Feedback("alert", 1, "test alert.");
-			prob = new Problem("Test", 
-				"This is still a test.", 
-				`$$ \left( 1.5 \times 10^3 \right) \cdot \left( 4 \times 10^{-9} \right) = \; ? $$`, 
-				10,
-				fb);
-
-			prob.appendSlide();
-
-		</script>
+		
+		<!-- Adaptive Classes -->
+		<script type="text/javascript" src="./Adapt.js"></script> 
+		<script type="text/javascript" src="./Answer.js"></script> 
+		<script type="text/javascript" src="./Problem.js"></script>
 	</head>
 	<body>
-		<div class="reveal">
-			<div class="slides">
 
-
-
-
-				<section data-markdown>
-					<textarea data-template>
-						###	 Sample Problem #1
-						###### This is a sample problem. Here would be the text for it. Imagine this is detailed text, that is helping set the scene for a problem you are solving.
-						
-						`$$ \left( 1.5 \times 10^3 \right) \cdot \left( 4 \times 10^{-9} \right) = \; ? $$`
-						
-						<form onsubmit="prob1(event); return false;" action="#" >
-							<input id="1" class="input" type="text" name="text">
-							<input type="submit" name="submit">
-						</form>
-
-					</textarea>
-
-				</section>
+		<div class="reveal" id="reveal">
+			<div class="slides" id="slides">
 				<section>
+					<button onclick( console.log("d") );>click me</button>
+					<a href="#/0">Link</a>
+					$$ \left( 1.5 \times 10^3 \right) \cdot \left( 4 \times 10^{-9} \right) = \; ? $$
 					There are plenty of styling / formatting bugs, as I just threw in some libraries together. it is unimportant as of now.
 				</section>
-
+				<section data-markdown>
+						<textarea data-template>
+							###	 Sample Problem #1
+							###### This is a sample problem. Here would be the text for it. Imagine this is detailed text that is helping set the scene for a problem you are solving.
+							
+							$$ \left( 1.5 \times 10^3 \right) \cdot \left( 4 \times 10^{-9} \right) = \; ? $$
+				
+							* select choice a -> do what?
+							* slect chooixe x, do what?
+							* answer f(n), do what?
+							* feedback per answer
+							* link to lessons
+				
+						</textarea>
+					</section>
 			</div>
-
+			
 
 
 
 
 		</div>
-		<script type="text/javascript">
-			
-			function prob1(event){
-				console.log("React / Angular are probably a good move for somehting like this.");
-			}
 
-
-		</script>
 		<script src="reveal.js/js/reveal.js"></script>
 		<script>
-			Reveal.initialize({
 
-				math: {
-					mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-					config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
-					// pass other options into `MathJax.Hub.Config()`
-				},
+			var revealConifuration = {
+					// math: {
+					// 	mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+					// 	config: 'TeX-AMS_HTML-full', // See http://docs.mathjax.org/en/latest/config-files.html
+					// 	// pass other options into `MathJax.Hub.Config()`
+					// },
 
-				dependencies: [
-					{ src: 'reveal.js/plugin/markdown/marked.js' },
-					{ src: 'reveal.js/plugin/markdown/markdown.js' },
-					{ src: 'reveal.js/plugin/notes/notes.js', async: true },
-					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true },
-					{ src: 'reveal.js/plugin/math/math.js', async: true }
-				]
-			});
+					dependencies: [
+						{ src: 'reveal.js/plugin/markdown/marked.js' },
+						{ src: 'reveal.js/plugin/markdown/markdown.js' },
+						{ src: 'reveal.js/plugin/notes/notes.js', async: true },
+						{ src: 'reveal.js/plugin/highlight/highlight.js', async: true },
+						{ src: 'reveal.js/plugin/math/math.js', async: true }
+					]
+				};
+			
 		</script>
+		<script>
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+	
+	
+	
+				// fb = new Feedback("alert", 1, "test alert.");
+				// prob = new Problem("Test", 
+				// 	"This is still a test.", 
+				// 	`$$ \left( 1.5 \times 10^3 \right) \cdot \left( 4 \times 10^{-9} \right) = \; ? $$`, 
+				// 	10,
+				// 	fb);
+	
+				// prob.appendSlide();
+
+				Reveal.initialize(revealConifuration);
+			</script>
+			<script>
+				let problem1 = new Problem();
+				problem1.draw();
+				
+			</script>
+			<script type="text/javascript">
+					
+				function prob1(event){
+					Reveal.next();
+					console.log("React / Angular are probably a good move for somehting like this.");
+				}
+		
+		
+			</script>
 	</body>
 </html>
